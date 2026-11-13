@@ -28,7 +28,7 @@ jobs:
 
       - name: Ключ подписи
         env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 || secrets.SHORTSBLOCKER }}
         run: |
           if [ -n "$KEYSTORE_BASE64" ]; then
             mkdir -p signing

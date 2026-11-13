@@ -40,7 +40,7 @@ Android-приложение (Android 10–16), которое:
 
 ## Сборка
 - **GitHub Actions** (`.github/workflows/build.yml`): на каждый push — тесты и сборка APK (артефакт);
-  если версии из `build_apk.sh` (`VERSION_NAME`) ещё нет в Releases — релиз `v<версия>`. Ключ подписи берётся из секретов `KEYSTORE_BASE64` и `KEYSTORE_PASSWORD`, в репозитории его нет.
+  если версии из `build_apk.sh` (`VERSION_NAME`) ещё нет в Releases — релиз `v<версия>`. Ключ подписи берётся из секрета `SHORTSBLOCKER` (или `KEYSTORE_BASE64`; пароль — `KEYSTORE_PASSWORD`, по умолчанию `shortsblocker`), в репозитории его нет.
 - **Android Studio**: открыть папку проекта (Gradle-файлы приложены).
 - **Без Gradle** (так собран приложенный APK):
   `BT=<sdk>/build-tools/34.0.4 ANDROID_JAR=<sdk>/platforms/android-33/android.jar ./build_apk.sh`
