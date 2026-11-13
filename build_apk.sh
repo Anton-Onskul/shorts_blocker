@@ -10,7 +10,9 @@ ANDROID_JAR="${ANDROID_JAR:?укажите ANDROID_JAR=путь/к/platforms/and
 SRC=app/src/main
 OUT=app/build/apk
 KS=signing/shortsblocker.jks
-KS_PASS=shortsblocker
+KS_PASS="${KS_PASS:-shortsblocker}"
+VERSION_CODE="${VERSION_CODE:-2}"
+VERSION_NAME="${VERSION_NAME:-1.1}"
 
 rm -rf "$OUT" && mkdir -p "$OUT"/{res,gen,classes,dex}
 
@@ -25,7 +27,7 @@ sed 's|<manifest xmlns:android="http://schemas.android.com/apk/res/android"|& pa
 "$BT/aapt2" link -o "$OUT/base.apk" -I "$ANDROID_JAR" \
   --manifest "$OUT/AndroidManifest.xml" --java "$OUT/gen" \
   --min-sdk-version 29 --target-sdk-version 33 \
-  --version-code 1 --version-name 1.0 \
+  --version-code "$VERSION_CODE" --version-name "$VERSION_NAME" \
   "$OUT/res/res.zip"
 
 echo "== 3. Компиляция Java (ошибки и предупреждения = провал)"
