@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shorts Blocker</string>
+    <string name="service_label">Shorts Blocker</string>
+    <string name="service_description">Закрывает YouTube Shorts и Instagram Reels и не даёт открыть TikTok. Приложение только проверяет, какой экран открыт в этих трёх приложениях, ничего не сохраняет и никуда не отправляет.</string>
+</resources>
